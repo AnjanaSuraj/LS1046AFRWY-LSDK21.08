@@ -30,12 +30,15 @@ to setup the workspace and toolchain and clone all the required repositories.
 
 
 4. After applying the patches, continue the steps mentioned in LSDK 21.08 User guide to compile UEFI. 
+
 Commands for LS1046AFRWY:
 
-To build UEFI image for LS1046AFRWY with Dynamic ACPI enabled -
+*To build UEFI image for LS1046AFRWY with Dynamic ACPI enabled -*
+
 build -p Platform/NXP/LS1046aFrwyPkg/LS1046aFrwyPkg.dsc -a AARCH64 -t GCC5 -b RELEASE -D FIRMWARE_VER="LSDK21.08_Dynamic" -D FIRMWARE_REV=0x00150008 -D DYNAMIC_ACPI_ENABLE=TRUE -D DYNAMIC_ACPI_PKG=LS1046aFrwyPkg
 
-To build UEFI image for LS1046AFRWY with Dynamic ACPI disabled -
+*To build UEFI image for LS1046AFRWY with Dynamic ACPI disabled -*
+
 build -p Platform/NXP/LS1046aFrwyPkg/LS1046aFrwyPkg.dsc -a AARCH64 -t GCC5 -b RELEASE -D FIRMWARE_VER="LSDK21.08_Static" -D FIRMWARE_REV=0x00150008
 
 5. ATF build commands for LS1046AFRWY
