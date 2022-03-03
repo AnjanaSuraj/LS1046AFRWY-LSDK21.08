@@ -1,0 +1,31 @@
+From 48d26b8fa44622fd7853fed92e92ba666f1c014b Mon Sep 17 00:00:00 2001
+From: sankalp2310 <sankalp.shrivastava@puresoftware.com>
+Date: Mon, 21 Feb 2022 16:34:17 +0530
+Subject: [PATCH] Platform/NXP/LS1046aFrwyPkg: Include SmbiosPlatformDxe.inf
+
+Fix static build error
+Includes SMBIOS DXE Driver when DYNAMIC_ACPI_ENABLE is set to false. This driver installs SMBIOS information for NXP platforms
+
+Signed-off-by: sankalp2310 <sankalp.shrivastava@puresoftware.com>
+---
+ Platform/NXP/LS1046aFrwyPkg/LS1046aFrwyPkg.dsc | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/Platform/NXP/LS1046aFrwyPkg/LS1046aFrwyPkg.dsc b/Platform/NXP/LS1046aFrwyPkg/LS1046aFrwyPkg.dsc
+index aef9127e..994a0546 100644
+--- a/Platform/NXP/LS1046aFrwyPkg/LS1046aFrwyPkg.dsc
++++ b/Platform/NXP/LS1046aFrwyPkg/LS1046aFrwyPkg.dsc
+@@ -238,6 +238,10 @@
+   #
+   #SMBIOS
+   #
++!if $(DYNAMIC_ACPI_ENABLE) == FALSE 
++  Platform/NXP/LS1046aFrwyPkg/SmbiosPlatformDxe/SmbiosPlatformDxe.inf 
++!endif
++
+   MdeModulePkg/Universal/SmbiosDxe/SmbiosDxe.inf
+ !if $(CAPSULE_ENABLE)
+   Platform/NXP/LS1046aFrwyPkg/SystemFirmwareDescriptor/SystemFirmwareDescriptor.inf
+-- 
+2.25.1
+

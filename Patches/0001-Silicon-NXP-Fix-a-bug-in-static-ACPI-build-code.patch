@@ -1,0 +1,32 @@
+From b1bd5a26a61d7635bdcd0e2c712f905481b5cd58 Mon Sep 17 00:00:00 2001
+From: AnjanaR <anjana.r@puresoftware.com>
+Date: Tue, 7 Sep 2021 18:21:01 +0530
+Subject: [PATCH] Silicon/NXP: Fix a bug in static ACPI build code
+
+Used PcdIortTablePtr for static ACPI build
+instead of PcdDynamicIortTablePtr.
+
+This will resolve the assert seen in BaseLib/CheckSum.c
+file.
+
+Signed-off-by: AnjanaR <anjana.r@puresoftware.com>
+---
+ Silicon/NXP/Drivers/NxpAcpiPlatformDxe/AcpiPlatform.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Silicon/NXP/Drivers/NxpAcpiPlatformDxe/AcpiPlatform.c b/Silicon/NXP/Drivers/NxpAcpiPlatformDxe/AcpiPlatform.c
+index ead2f3fe..1e7638f0 100644
+--- a/Silicon/NXP/Drivers/NxpAcpiPlatformDxe/AcpiPlatform.c
++++ b/Silicon/NXP/Drivers/NxpAcpiPlatformDxe/AcpiPlatform.c
+@@ -241,7 +241,7 @@ OnRootBridgesConnected (
+     CurrentTable[2] = (EFI_ACPI_COMMON_HEADER *)PcdGet64 (PcdDynamicDsdtTablePtr);
+     TableCnt = 3;
+   } else {
+-    CurrentTable[0] = (EFI_ACPI_COMMON_HEADER *)PcdGet64 (PcdDynamicIortTablePtr);
++    CurrentTable[0] = (EFI_ACPI_COMMON_HEADER *)PcdGet64 (PcdIortTablePtr);
+     TableCnt = 1;
+   }
+ 
+-- 
+2.25.1
+
