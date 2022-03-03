@@ -20,7 +20,7 @@ to setup the workspace and toolchain and clone all the required repositories.
    These patches have to be applied in edk2-platforms repository. 
    Command to apply the patches:  git am <name.patch> --keep-cr
    
-   a. Patch 1 : 464a7690 Platform/NXP/LS1046aFrwyPkg: Include SmbiosPlatformDxe.inf for static ACPI build
+   a. Patch 1 : 48d26b8f Platform/NXP/LS1046aFrwyPkg: Include SmbiosPlatformDxe.inf for static ACPI build
       This patch is required to compile the UEFI source code succesfully with DYNAMIC_ACPI_ENABLE set to FALSE. 
       This patch includes SMBIOS DXE Driver when DYNAMIC_ACPI_ENABLE is set to false. This driver installs SMBIOS information for NXP platforms.
 
