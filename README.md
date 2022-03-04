@@ -1,5 +1,3 @@
-# lsdk-frwy
-
 NXP's LSDK does not provide pre-built UEFI firmware image for LS1046AFRWY platform.
 
 This repository holds pre-built UEFI firmware image for LS1046AFRWY platform and also provides details to build your own UEFI firmware image for LS1046AFRWY.
