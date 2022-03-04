@@ -42,7 +42,9 @@ build -p Platform/NXP/LS1046aFrwyPkg/LS1046aFrwyPkg.dsc -a AARCH64 -t GCC5 -b RE
 build -p Platform/NXP/LS1046aFrwyPkg/LS1046aFrwyPkg.dsc -a AARCH64 -t GCC5 -b RELEASE -D FIRMWARE_VER="LSDK21.08_Static" -D FIRMWARE_REV=0x00150008
 
 5. ATF build commands for LS1046AFRWY
+
 $ make PLAT=ls1046afrwy bl2 pbl BOOT_MODE=qspi RCW=rcw_1600_qspiboot.bin
+
 $ make PLAT=ls1046afrwy fip BL33=LS1046AFRWY_EFI.fd
 
 This will create fip.bin and bl2_qspi.pbl in /build/ls1046afrwy/release/ folder.
