@@ -35,7 +35,7 @@ Commands for LS1046AFRWY:
 
 build -p Platform/NXP/LS1046aFrwyPkg/LS1046aFrwyPkg.dsc -a AARCH64 -t GCC5 -b RELEASE -D FIRMWARE_VER="LSDK21.08_Dynamic" -D FIRMWARE_REV=0x00150008 -D DYNAMIC_ACPI_ENABLE=TRUE -D DYNAMIC_ACPI_PKG=LS1046aFrwyPkg
 
-*To build UEFI image for LS1046AFRWY with Dynamic ACPI disabled -*
+*To build UEFI image for LS1046AFRWY with Static ACPI -*
 
 build -p Platform/NXP/LS1046aFrwyPkg/LS1046aFrwyPkg.dsc -a AARCH64 -t GCC5 -b RELEASE -D FIRMWARE_VER="LSDK21.08_Static" -D FIRMWARE_REV=0x00150008
 
